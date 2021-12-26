@@ -1,0 +1,4 @@
+@import './global/global-style.scss';
+.App {
+    @include container-90();
+}
