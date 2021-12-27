@@ -5,20 +5,33 @@ import './style.scss';
 import { FiAlignJustify } from "react-icons/fi";
 
 //component
-import Movies from './../movie';
+import Movies from './../movies';
+import AddMovie from './../addMovie';
 const Categories = () => {
     //hooks
-    const [openCategory, setOpenCategory] = useState(false);
+    const [isActive, setIsActive] = useState(false);
 
-    const showMovies = () => {
-
+    const show = () => {
+        return setIsActive((e) => !isActive);
     }
     return (
-        <div className="category" onClick={showMovies}>
-            <FiAlignJustify className='item' />
-            <p>Comedy</p>
+        <div className="category-wrapper" >
+            <div className="category" onClick={show}>
+                <FiAlignJustify className='item' />
+                <p>Comedy</p>
+            </div>
+            {isActive && (
+                <React.Fragment>
+                    <div className="add-movie-wrapper">
 
-            <Movies />
+                        <div className="container">
+                            <AddMovie />
+                        </div>
+                        <Movies />
+                    </div>
+                </React.Fragment>
+
+            )}
         </div>
     );
 }

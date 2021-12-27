@@ -1,0 +1,35 @@
+@import './../../global/global-style.scss';
+.movie-will-added-info {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    gap: 5rem;
+    .name {
+        display: flex;
+        flex-direction: column;
+        h3 {
+            color: $light-gray;
+            font-weight: 500;
+        }
+        p {
+            font-weight: 600;
+        }
+    }
+    .description {
+        display: flex;
+        flex-direction: column;
+        h3 {
+            color: $light-gray;
+            font-weight: 500;
+        }
+        p {
+            font-weight: 600;
+        }
+    }
+}
+
+.adding-movie-wrapper {
+    p {
+        font-weight: bold;
+    }
+}
