@@ -16,6 +16,30 @@
             font-weight: 500;
             color: $light-gray;
         }
+        form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1px;
+            input {
+                padding: 9px;
+            }
+            textarea {
+                width: 220px;
+                padding: 5px;
+            }
+            button {
+                padding: 9px;
+                background-color: #00A65A;
+                color: #fff;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                &:hover {
+                    background-color: #33d88e;
+                }
+            }
+        }
     }
     .movies-wrapper {
         background-color: #fff;

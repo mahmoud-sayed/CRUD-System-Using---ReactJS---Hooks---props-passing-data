@@ -2,12 +2,6 @@ import React from 'react';
 import './style.scss';
 
 
-
-//component
-import Form from './../form';
-
-
-
 const AddMovie = () => {
 
     return (
@@ -24,7 +18,11 @@ const AddMovie = () => {
             </div>
             <div className="adding-movie-wrapper">
                 <p>Movies</p>
-                <Form />
+                <form>
+                    <input type="text" placeholder="English Name" required />
+                    <textarea placeholder="English Description" name="description" rows="3" cols="15" />
+                    <button type="submit">Create Category</button>
+                </form>
             </div>
         </React.Fragment>
 
