@@ -3,7 +3,7 @@
 ## steps for creating this section
 
 - create nre react app
-- installed (Redux, React Redux, React Icons, Sass);
+- installed (Redux, React Redux, React Icons, Sass, Redux Thunk);
 - start to create design first
 ---
 ## Blockers I faced

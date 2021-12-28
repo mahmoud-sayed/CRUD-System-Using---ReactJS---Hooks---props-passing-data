@@ -7,6 +7,10 @@ import { FiAlignJustify } from "react-icons/fi";
 // component 
 import MovieInfo from './../movieInfo';
 
+// Redux
+import { connect } from 'react-redux';
+
+
 const Movies = () => {
     const [isActive, setIsActive] = useState(false);
 
@@ -35,4 +39,12 @@ const Movies = () => {
     );
 }
 
-export default Movies;
+
+
+const mapStateToProps = (state) => {
+    return {
+        movies: state.categories.movies
+    }
+}
+
+export default connect(mapStateToProps)(Movies);

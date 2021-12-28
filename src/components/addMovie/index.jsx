@@ -1,8 +1,11 @@
 import React from 'react';
 import './style.scss';
 
+//
+
 
 const AddMovie = () => {
+
 
     return (
         <React.Fragment>
