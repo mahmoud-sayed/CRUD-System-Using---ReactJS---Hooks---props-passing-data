@@ -3,7 +3,7 @@ import './style.scss';
 
 //components
 import Categories from './../components/categories'
-const Page = () => {
+const Page = (props) => {
     return (
         <div className="page-wrapper">
             <div className="new-category">
@@ -17,7 +17,7 @@ const Page = () => {
             <div className="movies-wrapper">
                 <h2>Movies Data</h2>
                 <div className="categories-wrapper">
-                    <Categories />
+                    <Categories data={props.data} />
                 </div>
             </div>
         </div>

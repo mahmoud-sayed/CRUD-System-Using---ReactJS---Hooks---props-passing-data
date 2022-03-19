@@ -7,32 +7,57 @@ import { FiAlignJustify } from "react-icons/fi";
 //component
 import Movies from './../movies';
 import AddMovie from './../addMovie';
-const Categories = () => {
+const Categories = (props) => {
     //hooks
     const [isActive, setIsActive] = useState(false);
 
     const show = () => {
         return setIsActive((e) => !isActive);
     }
+    console.log();
+    props.data.forEach(category => {
+
+    });
     return (
-        <div className="category-wrapper" >
-            <div className="category" onClick={show}>
-                <FiAlignJustify className='item' />
-                <p>Comedy</p>
-            </div>
-            {isActive && (
-                <React.Fragment>
-                    <div className="add-movie-wrapper">
+        <React.Fragment>
+            <div className="category-wrapper" >
+                <div className="category" onClick={show}>
+                    <FiAlignJustify className='item' />
+                    <p>Comedy</p>
+                </div>
+                {isActive && (
+                    <React.Fragment>
+                        <div className="add-movie-wrapper">
 
-                        <div className="container">
-                            <AddMovie />
+                            <div className="container">
+                                <AddMovie />
+                            </div>
+                            <Movies />
                         </div>
-                        <Movies />
-                    </div>
-                </React.Fragment>
+                    </React.Fragment>
 
-            )}
-        </div>
+                )}
+            </div>
+            <div className="category-wrapper" >
+                <div className="category" onClick={show}>
+                    <FiAlignJustify className='item' />
+                    <p>Comedy</p>
+                </div>
+                {isActive && (
+                    <React.Fragment>
+                        <div className="add-movie-wrapper">
+
+                            <div className="container">
+                                <AddMovie />
+                            </div>
+                            <Movies />
+                        </div>
+                    </React.Fragment>
+
+                )}
+            </div>
+        </React.Fragment>
+
     );
 }
 
