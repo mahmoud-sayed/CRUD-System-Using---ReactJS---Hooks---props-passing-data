@@ -14,17 +14,22 @@ const Categories = (props) => {
     const show = () => {
         return setIsActive((e) => !isActive);
     }
-    console.log();
-    props.data.forEach(category => {
 
-    });
-    return (
-        <React.Fragment>
-            <div className="category-wrapper" >
+    const category = () => {
+        props.data.forEach(category => {
+            return (
                 <div className="category" onClick={show}>
                     <FiAlignJustify className='item' />
                     <p>Comedy</p>
                 </div>
+            );
+            console.log(props.data)
+        })
+    };
+    return (
+        <React.Fragment>
+            <div className="category-wrapper" >
+                {category}
                 {isActive && (
                     <React.Fragment>
                         <div className="add-movie-wrapper">
@@ -35,7 +40,6 @@ const Categories = (props) => {
                             <Movies />
                         </div>
                     </React.Fragment>
-
                 )}
             </div>
             <div className="category-wrapper" >
