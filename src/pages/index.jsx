@@ -17,7 +17,9 @@ const Page = (props) => {
             <div className="movies-wrapper">
                 <h2>Movies Data</h2>
                 <div className="categories-wrapper">
-                    <Categories data={props.data} />
+                    {props.data[0] && <Categories data={props.data[0]} />}
+                    {props.data[1] && <Categories data={props.data[1]} />}
+
                 </div>
             </div>
         </div>

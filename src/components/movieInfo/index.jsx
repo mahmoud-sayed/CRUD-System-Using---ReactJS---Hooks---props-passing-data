@@ -1,17 +1,17 @@
 import React from 'react';
 import './style.scss';
 
-const MovieInfo = () => {
+const MovieInfo = (props) => {
 
     return (
         <div className="movie-info">
             <div className="name">
                 <h3>Movie Name</h3>
-                <p>Movie name</p>
+                <p>{props.movieInfo.name}</p>
             </div>
             <div className="description">
                 <h3>Description</h3>
-                <p>Movie Description</p>
+                <p>{props.movieInfo.description}</p>
             </div>
         </div>
     );

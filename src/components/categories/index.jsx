@@ -11,41 +11,18 @@ const Categories = (props) => {
     //hooks
     const [isActive, setIsActive] = useState(false);
 
+
     const show = () => {
         return setIsActive((e) => !isActive);
     }
 
-    const category = () => {
-        props.data.forEach(category => {
-            return (
-                <div className="category" onClick={show}>
-                    <FiAlignJustify className='item' />
-                    <p>Comedy</p>
-                </div>
-            );
-            console.log(props.data)
-        })
-    };
+
     return (
         <React.Fragment>
             <div className="category-wrapper" >
-                {category}
-                {isActive && (
-                    <React.Fragment>
-                        <div className="add-movie-wrapper">
-
-                            <div className="container">
-                                <AddMovie />
-                            </div>
-                            <Movies />
-                        </div>
-                    </React.Fragment>
-                )}
-            </div>
-            <div className="category-wrapper" >
                 <div className="category" onClick={show}>
                     <FiAlignJustify className='item' />
-                    <p>Comedy</p>
+                    <p>{props.data.name ? props.data.name : ''}</p>
                 </div>
                 {isActive && (
                     <React.Fragment>
@@ -54,12 +31,16 @@ const Categories = (props) => {
                             <div className="container">
                                 <AddMovie />
                             </div>
-                            <Movies />
+                            <Movies movies={props.data.movies[0]} />
+                            <Movies movies={props.data.movies[1]} />
+                            <Movies movies={props.data.movies[2]} />
+                            <Movies movies={props.data.movies[3]} />
+
                         </div>
                     </React.Fragment>
-
                 )}
             </div>
+
         </React.Fragment>
 
     );
