@@ -7,11 +7,11 @@ const MovieInfo = (props) => {
         <div className="movie-info">
             <div className="name">
                 <h3>Movie Name</h3>
-                <p>{props.movieInfo.name}</p>
+                <p>{props.moviesName}</p>
             </div>
             <div className="description">
                 <h3>Description</h3>
-                <p>{props.movieInfo.description}</p>
+                <p>{props.moviesDescription}</p>
             </div>
         </div>
     );

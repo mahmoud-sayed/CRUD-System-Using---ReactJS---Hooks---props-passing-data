@@ -29,7 +29,8 @@ const Movies = (props) => {
                     </div>
                 </div>
                 {isActive && (
-                    props.movies && <MovieInfo moviesInfo={props.movies} />
+                    <MovieInfo moviesName={props.movies.name} moviesDescription={props.movies.description} />
+
                 )}
             </div>
         </div>
