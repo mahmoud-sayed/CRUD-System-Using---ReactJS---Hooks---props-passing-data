@@ -5,8 +5,10 @@
 ## steps for creating this section
 
 - create nre react app
-- installed (Redux, React Redux, React Icons, Sass, Redux Thunk);
+- installed (Redux, React Icons, Sass);
 - start to create design first
+- start to fitch data from server
+- pass data from father to son to render it
 
 ---
 

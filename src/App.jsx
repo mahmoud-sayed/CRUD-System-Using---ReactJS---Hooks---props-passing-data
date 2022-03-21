@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.scss';
 import Page from './pages';
 
-const App = () => {
+const App = (props) => {
 
   //fitch data from json server
   const url = 'http://localhost:5000/categories';
@@ -14,9 +14,17 @@ const App = () => {
       .then((response) => setData(response.data));
   }, [url]);
 
+  const savedCategoryDataHandler = (savedCategoryData) => {
+    const newCategoryData = {
+      ...savedCategoryData,
+      id: Math.random().toString()
+    }
+    console.log(newCategoryData);
+  }
+
   return (
     <div className="App">
-      <Page data={data} />
+      <Page data={data} onAddCategoryData={savedCategoryDataHandler} />
     </div>
   );
 }

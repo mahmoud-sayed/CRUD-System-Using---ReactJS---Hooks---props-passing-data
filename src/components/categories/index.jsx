@@ -22,7 +22,7 @@ const Categories = (props) => {
             <div className="category-wrapper" >
                 <div className="category" onClick={show}>
                     <FiAlignJustify className='item' />
-                    <p>{props.data.name ? props.data.name : ''}</p>
+                    <p>{props.data.name}</p>
                 </div>
                 {isActive && (
                     <React.Fragment>
