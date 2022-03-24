@@ -16,6 +16,14 @@ const Categories = (props) => {
         return setIsActive((e) => !isActive);
     }
 
+    const saveMoviesDataHandler = (newMovieAdded) => {
+        const moviesData = {
+            ...newMovieAdded,
+            id: Math.random().toString()
+        }
+        props.onMoviesAdded(moviesData);
+    }
+
 
     return (
         <React.Fragment>
@@ -29,7 +37,7 @@ const Categories = (props) => {
                         <div className="add-movie-wrapper">
 
                             <div className="container">
-                                <AddMovie />
+                                <AddMovie onNewMovieAdded={saveMoviesDataHandler} />
                             </div>
                             <Movies movies={props.data.movies[0]} />
                             <Movies movies={props.data.movies[1]} />

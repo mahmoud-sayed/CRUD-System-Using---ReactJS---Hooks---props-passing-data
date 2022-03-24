@@ -21,10 +21,14 @@ const App = (props) => {
     }
     console.log(newCategoryData);
   }
+  // to get data from form after customer add his data
+  const moviesDataReceived = (moviesData) => {
+    console.log(moviesData);
+  }
 
   return (
     <div className="App">
-      <Page data={data} onAddCategoryData={savedCategoryDataHandler} />
+      <Page data={data} onAddCategoryData={savedCategoryDataHandler} onReceiveMoviesData={moviesDataReceived} />
     </div>
   );
 }
