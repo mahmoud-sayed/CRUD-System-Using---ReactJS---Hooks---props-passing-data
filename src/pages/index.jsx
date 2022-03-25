@@ -34,8 +34,12 @@ const Page = (props) => {
             <div className="movies-wrapper">
                 <h2>Movies Data</h2>
                 <div className="categories-wrapper">
-                    {props.data[0] && <Categories onMoviesAdded={moviesAdded} data={props.data[0]} />}
-                    {props.data[1] && <Categories onMoviesAdded={moviesAdded} data={props.data[1]} />}
+                    {props.data &&
+                        props.data.map(singleCategory =>
+                            <Categories onMoviesAdded={moviesAdded} data={singleCategory}
+                            />)
+                    }
+
                 </div>
             </div>
         </div>
