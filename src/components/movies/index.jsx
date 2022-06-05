@@ -8,12 +8,12 @@ import { FiAlignJustify } from "react-icons/fi";
 import MovieInfo from './../movieInfo';
 
 
-const Movies = (props) => {
+const Movies = () => {
     const [isActive, setIsActive] = useState(false);
 
     const show = () => {
         return setIsActive((e) => !isActive);
-    }
+    };
 
     return (
         <div className="movie-wrapper">
@@ -21,7 +21,7 @@ const Movies = (props) => {
                 <div className="movie" onClick={show}>
                     <div className="movie-name">
                         <FiAlignJustify className='item' />
-                        <p>{props.movies.name}</p>
+                        <p>ss</p>
                     </div>
                     <div className="action-buttons">
                         <button className="edit">Edit</button>
@@ -29,13 +29,13 @@ const Movies = (props) => {
                     </div>
                 </div>
                 {isActive && (
-                    <MovieInfo moviesName={props.movies.name} moviesDescription={props.movies.description} />
+                    <MovieInfo />
 
                 )}
             </div>
         </div>
     );
-}
+};
 
 
 

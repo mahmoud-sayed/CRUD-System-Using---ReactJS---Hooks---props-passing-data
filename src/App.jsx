@@ -3,34 +3,33 @@ import axios from 'axios';
 import './App.scss';
 import Page from './pages';
 
-const App = (props) => {
 
-  //fitch data from json server
-  const url = 'http://localhost:5000/categories';
+const App = () => {
+
+
+  const DATA_URL = 'http://localhost:100/categories';
   const [data, setData] = useState('');
 
   useEffect(() => {
-    axios.get(url)
-      .then((response) => setData(response.data));
-  }, [url]);
+    (async function () {
+      const response = await axios.get(DATA_URL);
+      console.log(response);
+      setData(response.data);
+    })();
+  }, []);
 
-  const savedCategoryDataHandler = (savedCategoryData) => {
-    const newCategoryData = {
-      ...savedCategoryData,
-      id: Math.random().toString()
-    }
-    console.log(newCategoryData);
-  }
-  // to get data from form after customer add his data
-  const moviesDataReceived = (moviesData) => {
-    console.log(moviesData);
-  }
+
+
+
+
 
   return (
     <div className="App">
-      <Page data={data} onAddCategoryData={savedCategoryDataHandler} onReceiveMoviesData={moviesDataReceived} />
+      <Page
+        data={data}
+      />
     </div>
   );
-}
+};
 
 export default App;
