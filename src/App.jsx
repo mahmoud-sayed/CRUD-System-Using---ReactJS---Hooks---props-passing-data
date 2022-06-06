@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.scss';
 import Page from './pages';
+import config from './config';
 
 
 const App = () => {
 
 
-  const DATA_URL = 'http://localhost:100/categories';
+
   const [data, setData] = useState('');
 
   useEffect(() => {
     (async function () {
-      const response = await axios.get(DATA_URL);
-      console.log(response);
+      const response = await config.get(`/categories`);
       setData(response.data);
     })();
   }, []);

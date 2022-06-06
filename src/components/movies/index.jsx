@@ -1,42 +1,15 @@
-import React, { useState } from 'react';
-import './style.scss';
+import React from 'react';
+import Movie from './Movie';
 
-//react Icon
-import { FiAlignJustify } from "react-icons/fi";
-
-// component 
-import MovieInfo from './../movieInfo';
-
-
-const Movies = () => {
-    const [isActive, setIsActive] = useState(false);
-
-    const show = () => {
-        return setIsActive((e) => !isActive);
-    };
-
+const Movies = ({ moviesList }) => {
     return (
-        <div className="movie-wrapper">
-            <div className="add-movie">
-                <div className="movie" onClick={show}>
-                    <div className="movie-name">
-                        <FiAlignJustify className='item' />
-                        <p>ss</p>
-                    </div>
-                    <div className="action-buttons">
-                        <button className="edit">Edit</button>
-                        <button className="delete">Delete</button>
-                    </div>
-                </div>
-                {isActive && (
-                    <MovieInfo />
+        <React.Fragment>
+            {moviesList.map(movie =>
+                <Movie key={movie.id} name={movie.name} description={movie.description} />
+            )}
 
-                )}
-            </div>
-        </div>
+        </React.Fragment>
     );
 };
-
-
 
 export default Movies;

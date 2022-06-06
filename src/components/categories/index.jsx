@@ -21,7 +21,7 @@ const Categories = ({ singleCategory }) => {
             <div className="category-wrapper" >
                 <div className="category" onClick={show}>
                     <FiAlignJustify className='item' />
-                    <p>category</p>
+                    <p>{singleCategory.name}</p>
                 </div>
                 {isActive && (
                     <React.Fragment>
@@ -30,7 +30,7 @@ const Categories = ({ singleCategory }) => {
                             <div className="container">
                                 <AddMovie />
                             </div>
-                            <Movies />
+                            <Movies moviesList={singleCategory.movies} />
 
                         </div>
                     </React.Fragment>
