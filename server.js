@@ -3,7 +3,7 @@ const server = jsonServer.create()
 const router = jsonServer.router('./data/db.json')
 const middlewares = jsonServer.defaults()
 const fs = require('fs')
-const axios = require('axios')
+const {v4 : uuidv4} = require('uuid')
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
@@ -18,16 +18,13 @@ server.post('/categories/:catId', async (req, res) => {
     const customer = JSON.parse(jsonString);
     await customer.categories.map((cat) => {
         if(cat.id === Number(req.params.catId)){
-            cat.movies.push(req.body)
+            cat.movies.push({id:uuidv4(),...req.body})
         }
     })
     const jsonStringfy= JSON.stringify(customer)
     await fs.writeFileSync('./data/db.json',jsonStringfy)
     return res.jsonp(customer)
   })
-
-
-
 
 // Use default router
 server.use(router)
