@@ -9,10 +9,18 @@ const Page = ({ data }) => {
     const [name, setName] = useState('');
 
     //to handel create operation
-    const handelSubmit = () => {
-        const id = data[data.length - 1].id + 1;
-
-        config.post('categories', { id, name, movies: [] });
+    const handelSubmit = (e) => {
+        e.preventDefault();
+        if (name.length === 0) {
+            alert('please write name');
+        } else if (data.length === 0) {
+            const id = 1;
+            config.post('categories', { id, name, movies: [] });
+        } else {
+            const id = data[data.length - 1].id + 1;
+            config.post('categories', { id, name, movies: [] });
+        }
+        setName('');
     };
 
     return (
@@ -20,7 +28,7 @@ const Page = ({ data }) => {
             <div className="new-category">
                 <h3>Add Category</h3>
                 <form onSubmit={handelSubmit}>
-                    <input type="text" placeholder="Category Name *" required onChange={(e) => setName(e.target.value)} />
+                    <input type="text" value={name} placeholder="Category Name *" required onChange={(e) => setName(e.target.value)} />
                     <button type="submit">Create Category</button>
                 </form>
             </div>

@@ -28,7 +28,7 @@ const Categories = ({ singleCategory }) => {
                         <div className="add-movie-wrapper">
 
                             <div className="container">
-                                <AddMovie />
+                                <AddMovie movies={singleCategory.movies} categoryId={singleCategory.id} />
                             </div>
                             <Movies moviesList={singleCategory.movies} />
 
